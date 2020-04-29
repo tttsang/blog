@@ -14,6 +14,7 @@ class ArticleSitemap(Sitemap):
     def lastmod(self, obj):
         return obj.update_date
 
+
 class CategorySitemap(Sitemap):
     changefreq = 'weekly'
     priority = 0.8

@@ -1,3 +1,4 @@
+# coding=utf-8
 """
 Django settings for izone project.
 
@@ -13,8 +14,6 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 import os
 import sys
 import platform
-
-# 更换默认的数据库连接
 import pymysql
 
 pymysql.install_as_MySQLdb()
@@ -33,7 +32,7 @@ sys.path.insert(0, os.path.join(BASE_DIR, 'apps'))
 
 # 自由选择需要开启的功能
 # 是否开始[在线工具]应用
-TOOL_FLAG = True
+TOOL_FLAG = False
 # 是否开启[API]应用
 API_FLAG = False
 # DEBUG模式是否开始的选择
@@ -116,7 +115,7 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
+    #'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -226,9 +225,9 @@ REST_FRAMEWORK = {
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',  # 修改数据库为MySQL，并进行配置
-        'NAME': 'mysite',       # 数据库的名称
+        'NAME': 'myblog',       # 数据库的名称
         'USER': 'root',        # 数据库的用户名
-        'PASSWORD': 'python',  # 数据库的密码
+        'PASSWORD': '4747',  # 数据库的密码
         'HOST': '127.0.0.1',
         'PORT': 3306,
         'OPTIONS': {'charset': 'utf8', }
